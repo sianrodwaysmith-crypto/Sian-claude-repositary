@@ -48,8 +48,19 @@ export default function App() {
     );
   }
 
+  const linking = {
+    prefixes: [],
+    config: {
+      screens: {
+        Home: '',
+        Privacy: 'privacy',
+        Terms: 'terms',
+      },
+    },
+  };
+
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking}>
       <StatusBar style="light" />
       <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Morning Briefing' }} />
